@@ -5,7 +5,7 @@ import "testing"
 func TestPut(t *testing.T) {
 	Config([]string{"localhost:2379", "localhost:2380"}, 5)
 
-	err := Put("key1", "value1")
+	err := Put("user1", HashAndSalt([]byte("Password1234!@#$")))
 	if err != nil {
 		t.Error("Unable to put key/value pair")
 	}

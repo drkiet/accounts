@@ -10,8 +10,8 @@ import (
 var Endpoints []string
 var DialTimeout time.Duration
 
-func Config(endPints []string, dialTimeout time.Duration) {
-	Endpoints = endPints
+func Config(endpoints []string, dialTimeout time.Duration) {
+	Endpoints = endpoints
 	DialTimeout = dialTimeout
 }
 
