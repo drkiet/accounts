@@ -6,13 +6,13 @@ import (
 )
 
 func TestHashAndSalt(t *testing.T) {
-	log.Println("Salted Hashing ...")
+	log.Println("test Salted Hashing")
 	pwd := "GreenDog1234!@#$"
 	hash := HashAndSalt([]byte(pwd))
 	if len(hash) <= 0 {
 		t.Error("Invalid hashing returned")
 	}
-	log.Println("Salted Hash", hash)
+	log.Println("test Salted Hashing ends", hash)
 }
 
 func TestComparePasswords(t *testing.T) {

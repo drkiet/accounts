@@ -25,7 +25,7 @@ func connect() (cli *clientv3.Client, err error) {
 func Put(key, value string) error {
 	cli, err := connect()
 	if err != nil {
-		log.Fatalln("Unable to connect to etcd server")
+		log.Println("Unable to connect to etcd server")
 		return err
 	}
 	defer cli.Close()
@@ -34,7 +34,7 @@ func Put(key, value string) error {
 
 	putResp, err := kv.Put(context.TODO(), key, value)
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
 		return err
 	}
 
@@ -45,7 +45,7 @@ func Put(key, value string) error {
 func Get(key string) (string, error) {
 	cli, err := connect()
 	if err != nil {
-		log.Fatalln("Unable to connect to etcd server")
+		log.Println("Unable to connect to etcd server")
 		return "", err
 	}
 	defer cli.Close()
@@ -54,7 +54,7 @@ func Get(key string) (string, error) {
 
 	getResp, err := kv.Get(context.TODO(), key)
 	if err != nil {
-		log.Fatal(err)
+		log.Println(err)
 		return "", err
 	}
 

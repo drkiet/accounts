@@ -1,25 +1,9 @@
 package accounts
 
 import (
-	"fmt"
 	"golang.org/x/crypto/bcrypt"
 	"log"
 )
-
-func GetPwd() []byte {
-	// Prompt the user to enter a password
-	fmt.Println("Enter a password")
-	// Variable to store the users input
-	var pwd string
-	// Read the users input
-	_, err := fmt.Scan(&pwd)
-	if err != nil {
-		log.Println(err)
-	}
-	// Return the users input as a byte slice which will save us
-	// from having to do this conversion later on
-	return []byte(pwd)
-}
 
 func HashAndSalt(pwd []byte) string {
 
